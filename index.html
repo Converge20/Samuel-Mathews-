@@ -185,13 +185,42 @@
       font-size: .93rem;
     }
 
+    .adventure-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .adventure-card {
+      overflow: hidden;
+      border: 1px solid #dce5e9;
+      border-radius: 8px;
+      background: #f8fafb;
+    }
+
+    .adventure-card img {
+      display: block;
+      width: 100%;
+      height: 230px;
+      object-fit: contain;
+      background: #edf2f4;
+    }
+
+    .adventure-card div {
+      padding: 14px;
+    }
+
+    .adventure-card h3 {
+      margin: 0;
+    }
+
     footer {
       padding: 0 20px 34px;
       color: var(--muted);
       text-align: center;
     }
 
-    @media (max-width: 650px) {
+    @media (max-width: 700px) {
       header {
         padding: 48px 24px;
       }
@@ -203,7 +232,8 @@
       }
 
       .hero,
-      .story {
+      .story,
+      .adventure-grid {
         grid-template-columns: 1fr;
       }
 
@@ -215,6 +245,11 @@
       .story img {
         width: 220px;
       }
+
+      .adventure-card img {
+        height: auto;
+        max-height: 370px;
+      }
     }
   </style>
 </head>
@@ -225,6 +260,7 @@
       <div>
         <h1>Samuel Mathews</h1>
         <p class="subtitle">Accounting Student | CPA Track</p>
+
         <p class="intro">
           I am an Accounting student at Cedarville University building a
           foundation in financial analysis, accurate business operations, and
@@ -233,6 +269,7 @@
 
         <div class="buttons">
           <a href="mailto:samuelalanmathews@gmail.com">Email Me</a>
+          <a href="sms:+15132085402">Text Me</a>
           <a class="secondary"
              href="https://www.linkedin.com/in/samuel-alan-mathews/"
              target="_blank">View LinkedIn</a>
@@ -419,12 +456,39 @@
         <li>Maintain a clean, organized, and sanitary kitchen environment in accordance with health and safety standards.</li>
         <li>Support reliable dining operations through consistent attention to detail, cleanliness, and teamwork.</li>
       </ul>
+    </section>
+
+    <section>
+      <h2>Beyond the Resume</h2>
 
       <p>
-        These roles have reinforced the importance of professionalism, service,
-        safety, and following through on commitments—skills I carry into both my
-        academic work and future accounting career.
+        I enjoy challenging myself outdoors and exploring new places. These
+        experiences have strengthened my resilience, curiosity, and appreciation
+        for preparation, teamwork, and lifelong learning.
       </p>
+
+      <div class="adventure-grid">
+        <article class="adventure-card">
+          <img src="FullSizeRender.jpg" alt="Samuel Mathews hiking in the Grand Canyon">
+          <div>
+            <h3>Hiking the Grand Canyon</h3>
+          </div>
+        </article>
+
+        <article class="adventure-card">
+          <img src="IMG_3885.jpg" alt="Andes Mountains and alpine lake">
+          <div>
+            <h3>Trekking in the Andes Mountains</h3>
+          </div>
+        </article>
+
+        <article class="adventure-card">
+          <img src="115d4ac2-9233-4cda-b653-e72f9f976b12.JPG" alt="Samuel Mathews canoeing on a Virginia river">
+          <div>
+            <h3>Canoeing Virginia Rivers</h3>
+          </div>
+        </article>
+      </div>
     </section>
   </main>
 

@@ -26,12 +26,28 @@
     header {
       background: var(--navy);
       color: white;
-      padding: 74px 24px 62px;
+      padding: 64px 24px;
     }
 
     .container {
       max-width: 920px;
       margin: auto;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 180px;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .headshot {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
+      border: 5px solid #d5e5ed;
     }
 
     h1 {
@@ -47,7 +63,7 @@
     }
 
     .intro {
-      max-width: 720px;
+      max-width: 700px;
       font-size: 1.06rem;
     }
 
@@ -109,6 +125,53 @@
       padding-left: 22px;
     }
 
+    .quote {
+      margin: 24px 0 0;
+      padding: 18px 22px;
+      border-left: 5px solid var(--blue);
+      background: #f1f7fa;
+      color: #25485c;
+      font-size: 1.05rem;
+      font-style: italic;
+    }
+
+    .quote cite {
+      display: block;
+      margin-top: 8px;
+      font-style: normal;
+      font-weight: bold;
+    }
+
+    .story {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .story img,
+    .campus-photo {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .story img {
+      height: 290px;
+      object-position: center;
+    }
+
+    .campus-photo {
+      max-height: 390px;
+      object-position: center;
+    }
+
+    .caption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
     .tags {
       display: flex;
       flex-wrap: wrap;
@@ -129,28 +192,32 @@
       text-align: center;
     }
 
-    @media (max-width: 600px) {
-      header { padding: 56px 24px; }
+    @media (max-width: 650px) {
+      header { padding: 48px 24px; }
       main { margin: 0; padding: 22px; border-radius: 0; }
+      .hero, .story { grid-template-columns: 1fr; }
+      .headshot { width: 145px; height: 145px; }
+      .story img { width: 220px; }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="container">
-      <h1>Samuel Mathews</h1>
-      <p class="subtitle">Accounting Student | CPA Track</p>
-      <p class="intro">
-        I am an Accounting student at Cedarville University building a foundation
-        in financial analysis, accurate business operations, and professional
-        communication. My experience in operations, leadership, and cross-cultural
-        communication has prepared me to contribute thoughtfully in detail-oriented
-        business environments.
-      </p>
-      <div class="buttons">
-        <a href="mailto:samuelalanmathews@gmail.com">Email Me</a>
-        <a class="secondary" href="https://www.linkedin.com/in/samuel-alan-mathews/" target="_blank">View LinkedIn</a>
+    <div class="container hero">
+      <div>
+        <h1>Samuel Mathews</h1>
+        <p class="subtitle">Accounting Student | CPA Track</p>
+        <p class="intro">
+          I am an Accounting student at Cedarville University building a
+          foundation in financial analysis, accurate business operations, and
+          professional communication.
+        </p>
+        <div class="buttons">
+          <a href="mailto:samuelalanmathews@gmail.com">Email Me</a>
+          <a class="secondary" href="https://www.linkedin.com/in/samuel-alan-mathews/" target="_blank">View LinkedIn</a>
+        </div>
       </div>
+      <img class="headshot" src="Samuel%20Mathews.jpg" alt="Samuel Mathews">
     </div>
   </header>
 
@@ -158,12 +225,45 @@
     <section>
       <h2>About Me</h2>
       <p>
-        I am pursuing a Bachelor of Science in Accounting and plan to work toward
-        CPA licensure. I value accuracy, integrity, and consistent effort. I bring
-        experience in inventory management, customer service, logistics, and
-        Portuguese translation, along with a strong interest in accounting and
-        business operations.
+        I am pursuing a Bachelor of Science in Accounting and plan to work
+        toward CPA licensure. I am interested in financial analysis, accurate
+        business operations, and using strong organizational skills to support
+        effective decision-making.
       </p>
+      <p>
+        I spent much of my childhood living in Brazil, where my parents worked
+        with a nonprofit organization. Living in a cross-cultural environment
+        broadened my perspective, strengthened my adaptability, and taught me
+        the value of clear communication across different backgrounds. During
+        that time, I served as an English-Portuguese translator, developing
+        professionalism, discretion, and confidence in high-pressure situations.
+      </p>
+
+      <blockquote class="quote">
+        “Far and away the best prize that life offers is the chance to work hard
+        at work worth doing.”
+        <cite>— Theodore Roosevelt</cite>
+      </blockquote>
+    </section>
+
+    <section>
+      <div class="story">
+        <img src="IMG_7317.jpg" alt="Samuel Mathews traveling in Brazil">
+        <div>
+          <h2>Global Perspective</h2>
+          <p>
+            My experience living in Brazil and translating between English and
+            Portuguese has shaped how I approach communication, teamwork, and
+            problem-solving. It has taught me to listen carefully, adapt quickly,
+            and work thoughtfully with people from different backgrounds.
+          </p>
+          <p>
+            I bring that global perspective to my academic work and professional
+            experience in logistics, inventory management, customer service, and
+            team leadership.
+          </p>
+        </div>
+      </div>
     </section>
 
     <section>
@@ -171,8 +271,8 @@
       <h3>Cedarville University</h3>
       <p class="date">B.S. Accounting | Expected December 2027</p>
       <p>
-        Minor in Biology, with additional academic study in Business Administration
-        and Bible.
+        Minor in Biology, with additional academic study in Business
+        Administration and Bible.
       </p>
     </section>
 
@@ -200,7 +300,6 @@
       <ul>
         <li>Assisted more than 50 customers daily in selecting electronics and related products.</li>
         <li>Maintained organized, accurate merchandise displays and product availability.</li>
-        <li>Promoted warranties and accessories through product knowledge and customer service.</li>
       </ul>
 
       <h3>Translator — Converge</h3>
@@ -239,7 +338,6 @@
 
     <section>
       <h2>Leadership & Involvement</h2>
-
       <h3>Accounting Society — Cedarville University</h3>
       <p class="date">General Member | August 2025 – Present</p>
       <p>
@@ -249,14 +347,18 @@
 
       <h3>Community & Ministry Service</h3>
       <p>
-        Served with the Southern Cone Initiative and The Timothy Initiative, supporting
-        cross-cultural community work, leadership development, and service projects.
+        Served with the Southern Cone Initiative and The Timothy Initiative,
+        supporting cross-cultural community work, leadership development, and
+        service projects.
       </p>
+    </section>
 
-      <h3>Additional Involvement</h3>
-      <p>
-        MuKappa member, intramural soccer, food drives, children’s ministry,
-        mission trips, and 8K running.
+    <section>
+      <h2>Campus Life</h2>
+      <img class="campus-photo" src="IMG_0336.jpg" alt="Samuel Mathews at Cedarville University">
+      <p class="caption">
+        Outside the classroom, I enjoy staying active and participating in campus
+        life at Cedarville University.
       </p>
     </section>
   </main>

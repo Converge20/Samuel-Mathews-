@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Samuel Mathews | Accounting Student</title>
+
   <style>
     :root {
       --navy: #12304a;
@@ -98,7 +99,9 @@
       border-bottom: 1px solid #e3e7ea;
     }
 
-    section:last-child { border-bottom: none; }
+    section:last-child {
+      border-bottom: none;
+    }
 
     h2 {
       margin: 0 0 16px;
@@ -112,7 +115,9 @@
       font-size: 1.08rem;
     }
 
-    h3:first-of-type { margin-top: 0; }
+    h3:first-of-type {
+      margin-top: 0;
+    }
 
     .date {
       margin: 0 0 8px;
@@ -149,27 +154,21 @@
       align-items: center;
     }
 
-    .story img,
-    .campus-photo {
-      width: 100%;
+    .story img {
+      width: 220px;
+      height: 290px;
       object-fit: cover;
+      object-position: center;
       border-radius: 8px;
     }
 
-    .story img {
-      height: 290px;
-      object-position: center;
-    }
-
-    .campus-photo {
-      max-height: 390px;
-      object-position: center;
-    }
-
-    .caption {
-      margin-top: 8px;
-      color: var(--muted);
-      font-size: .9rem;
+    .work-photo {
+      display: block;
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      margin: 22px auto;
+      border-radius: 8px;
     }
 
     .tags {
@@ -193,14 +192,33 @@
     }
 
     @media (max-width: 650px) {
-      header { padding: 48px 24px; }
-      main { margin: 0; padding: 22px; border-radius: 0; }
-      .hero, .story { grid-template-columns: 1fr; }
-      .headshot { width: 145px; height: 145px; }
-      .story img { width: 220px; }
+      header {
+        padding: 48px 24px;
+      }
+
+      main {
+        margin: 0;
+        padding: 22px;
+        border-radius: 0;
+      }
+
+      .hero,
+      .story {
+        grid-template-columns: 1fr;
+      }
+
+      .headshot {
+        width: 145px;
+        height: 145px;
+      }
+
+      .story img {
+        width: 220px;
+      }
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="container hero">
@@ -212,11 +230,15 @@
           foundation in financial analysis, accurate business operations, and
           professional communication.
         </p>
+
         <div class="buttons">
           <a href="mailto:samuelalanmathews@gmail.com">Email Me</a>
-          <a class="secondary" href="https://www.linkedin.com/in/samuel-alan-mathews/" target="_blank">View LinkedIn</a>
+          <a class="secondary"
+             href="https://www.linkedin.com/in/samuel-alan-mathews/"
+             target="_blank">View LinkedIn</a>
         </div>
       </div>
+
       <img class="headshot" src="Samuel%20Mathews.jpg" alt="Samuel Mathews">
     </div>
   </header>
@@ -224,12 +246,14 @@
   <main>
     <section>
       <h2>About Me</h2>
+
       <p>
         I am pursuing a Bachelor of Science in Accounting and plan to work
         toward CPA licensure. I am interested in financial analysis, accurate
         business operations, and using strong organizational skills to support
         effective decision-making.
       </p>
+
       <p>
         I spent much of my childhood living in Brazil, where my parents worked
         with a nonprofit organization. Living in a cross-cultural environment
@@ -249,14 +273,17 @@
     <section>
       <div class="story">
         <img src="IMG_7317.jpg" alt="Samuel Mathews traveling in Brazil">
+
         <div>
           <h2>Global Perspective</h2>
+
           <p>
             My experience living in Brazil and translating between English and
             Portuguese has shaped how I approach communication, teamwork, and
             problem-solving. It has taught me to listen carefully, adapt quickly,
             and work thoughtfully with people from different backgrounds.
           </p>
+
           <p>
             I bring that global perspective to my academic work and professional
             experience in logistics, inventory management, customer service, and
@@ -273,6 +300,15 @@
       <p>
         Minor in Biology, with additional academic study in Business
         Administration and Bible.
+      </p>
+    </section>
+
+    <section>
+      <h2>Relevant Coursework</h2>
+      <p>
+        Principles of Accounting I & II, Microeconomics, Statistics for Business,
+        Software Tools for Business, Creative Problem Solving, Business
+        Experience, and Business Law.
       </p>
     </section>
 
@@ -338,6 +374,7 @@
 
     <section>
       <h2>Leadership & Involvement</h2>
+
       <h3>Accounting Society — Cedarville University</h3>
       <p class="date">General Member | August 2025 – Present</p>
       <p>
@@ -354,11 +391,39 @@
     </section>
 
     <section>
-      <h2>Campus Life</h2>
-      <img class="campus-photo" src="IMG_0336.jpg" alt="Samuel Mathews at Cedarville University">
-      <p class="caption">
-        Outside the classroom, I enjoy staying active and participating in campus
-        life at Cedarville University.
+      <h2>Work & Academics</h2>
+
+      <p>
+        Alongside my Accounting coursework at Cedarville University, I work
+        approximately 15–20 hours per week in part-time campus roles. Balancing
+        employment with a full academic schedule has strengthened my time
+        management, dependability, organization, and ability to prioritize
+        responsibilities effectively.
+      </p>
+
+      <img class="work-photo"
+           src="IMG_0336.jpg"
+           alt="Samuel Mathews working at Cedarville University fitness center">
+
+      <h3>Fitness Floor Staff — Cedarville University</h3>
+      <p class="date">February 2026 – Present | Part-time</p>
+      <ul>
+        <li>Provide customer service by greeting members, assisting with check-ins, and answering questions about fitness facilities and services.</li>
+        <li>Maintain a clean, safe, and organized workout environment by sanitizing equipment and supporting safety standards.</li>
+        <li>Support daily gym operations by assisting members with equipment use, handling front-desk responsibilities, and resolving concerns professionally.</li>
+      </ul>
+
+      <h3>Sanitation & Kitchen Support Associate — Cedarville University</h3>
+      <p class="date">August 2023 – Present | Part-time</p>
+      <ul>
+        <li>Maintain a clean, organized, and sanitary kitchen environment in accordance with health and safety standards.</li>
+        <li>Support reliable dining operations through consistent attention to detail, cleanliness, and teamwork.</li>
+      </ul>
+
+      <p>
+        These roles have reinforced the importance of professionalism, service,
+        safety, and following through on commitments—skills I carry into both my
+        academic work and future accounting career.
       </p>
     </section>
   </main>

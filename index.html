@@ -59,7 +59,8 @@
     .image-and-copy { display: grid; grid-template-columns: 1.05fr 1fr; gap: 30px; align-items: center; }
 
     .feature-photo, .work-photo { width: 100%; display: block; border-radius: 12px; background: #edf2f5; }
-    .feature-photo { aspect-ratio: 4 / 3; object-fit: cover; object-position: center; }
+    /* Use the photo's natural portrait proportions—no fixed box and no crop. */
+    .global-photo { display: block; width: min(100%, 280px); height: auto !important; max-height: none !important; aspect-ratio: auto !important; object-fit: contain !important; margin: 0 auto; border-radius: 12px; background: #edf2f5; }
     /* This image intentionally shows the complete gym photo, without cutting off Samuel's face. */
     .work-photo { height: auto; object-fit: contain; }
 
@@ -115,7 +116,7 @@
     </section>
 
     <section id="global" class="card image-and-copy">
-      <img class="feature-photo" src="IMG_7317.jpg" alt="Samuel Mathews traveling in Brazil">
+      <img class="global-photo" src="IMG_7317.jpg" alt="Samuel Mathews traveling in Brazil">
       <div>
         <h2>Global Perspective</h2>
         <p>Living in Brazil shaped my perspective on communication, service, and the value of understanding people whose experiences differ from my own.</p>

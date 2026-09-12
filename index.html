@@ -3,497 +3,401 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Samuel Mathews — Accounting student and CPA candidate at Cedarville University.">
   <title>Samuel Mathews | Accounting Student</title>
-
   <style>
     :root {
       --navy: #12304a;
       --blue: #1e6e8c;
-      --light-blue: #e7f2f7;
-      --text: #1f2933;
-      --muted: #607080;
+      --light-blue: #eaf4f8;
+      --ink: #1f2d3a;
+      --muted: #627384;
+      --line: #dce5ea;
+      --surface: #ffffff;
+      --background: #f5f8fa;
     }
 
     * { box-sizing: border-box; }
 
+    html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      line-height: 1.6;
-      background: #f5f7f8;
+      color: var(--ink);
+      line-height: 1.65;
+      background: var(--background);
+    }
+
+    a { color: inherit; }
+
+    .container {
+      width: min(100% - 40px, 1000px);
+      margin: 0 auto;
     }
 
     header {
       background: var(--navy);
-      color: white;
-      padding: 64px 24px;
-    }
-
-    .container {
-      max-width: 920px;
-      margin: auto;
+      color: #fff;
+      padding: 56px 0 42px;
     }
 
     .hero {
       display: grid;
-      grid-template-columns: 1fr 180px;
+      grid-template-columns: 180px 1fr;
+      gap: 32px;
       align-items: center;
-      gap: 40px;
     }
 
-    .headshot {
-      width: 180px;
-      height: 180px;
+    .profile-photo {
+      width: 170px;
+      height: 170px;
+      display: block;
       object-fit: cover;
-      object-position: center;
+      /* Keeps the photo focused on Samuel's face rather than his torso. */
+      object-position: 50% 19%;
+      border: 5px solid rgba(255, 255, 255, 0.9);
       border-radius: 50%;
-      border: 5px solid #d5e5ed;
+      background: #dfe8ee;
     }
+
+    h1, h2, h3, p { margin-top: 0; }
 
     h1 {
-      font-size: clamp(2.5rem, 7vw, 4.3rem);
-      margin: 0;
-      letter-spacing: -1.5px;
+      margin-bottom: 6px;
+      font-size: clamp(2.15rem, 5vw, 3.5rem);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
     }
 
     .subtitle {
-      margin: 8px 0 22px;
-      color: #d5e5ed;
-      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: #d8e8ef;
+      font-size: 1.05rem;
     }
 
-    .intro {
-      max-width: 700px;
-      font-size: 1.06rem;
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
-    .buttons a {
-      display: inline-block;
-      margin: 12px 10px 0 0;
-      padding: 11px 17px;
-      background: white;
-      color: var(--navy);
+    .contact-links a {
+      padding: 8px 13px;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      border-radius: 999px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.92rem;
       text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
     }
 
-    .buttons .secondary {
-      background: transparent;
-      color: white;
-      border: 1px solid #b9d4e3;
+    .contact-links a:hover,
+    .contact-links a:focus-visible { background: rgba(255, 255, 255, 0.16); }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background: #fff;
+      border-bottom: 1px solid var(--line);
     }
 
-    main {
-      max-width: 920px;
-      margin: 32px auto;
-      padding: 20px 38px 42px;
-      background: white;
-      border-radius: 9px;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, .08);
+    nav .container {
+      display: flex;
+      gap: 19px;
+      overflow-x: auto;
+      padding: 12px 0;
+      scrollbar-width: none;
     }
 
-    section {
-      padding: 28px 0;
-      border-bottom: 1px solid #e3e7ea;
+    nav a {
+      flex: 0 0 auto;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
     }
 
-    section:last-child {
-      border-bottom: none;
+    nav a:hover, nav a:focus-visible { color: var(--blue); }
+
+    main { padding: 34px 0 55px; }
+
+    section { margin-bottom: 24px; }
+
+    .card {
+      padding: clamp(24px, 4vw, 38px);
+      background: var(--surface);
+      border: 1px solid #e3eaee;
+      border-radius: 16px;
+      box-shadow: 0 9px 26px rgba(18, 48, 74, 0.06);
     }
 
     h2 {
-      margin: 0 0 16px;
+      margin-bottom: 18px;
       color: var(--navy);
-      font-size: 1.55rem;
+      font-size: clamp(1.55rem, 3vw, 2rem);
+      line-height: 1.2;
     }
 
     h3 {
-      margin: 24px 0 2px;
-      color: #182f40;
-      font-size: 1.08rem;
+      margin-bottom: 3px;
+      color: var(--navy);
+      font-size: 1.1rem;
+      line-height: 1.35;
     }
 
-    h3:first-of-type {
-      margin-top: 0;
-    }
-
-    .date {
-      margin: 0 0 8px;
-      color: var(--muted);
-      font-style: italic;
-    }
-
-    ul {
-      margin: 8px 0 0;
-      padding-left: 22px;
+    .lead {
+      margin-bottom: 0;
+      color: #364958;
+      font-size: 1.05rem;
     }
 
     .quote {
-      margin: 24px 0 0;
-      padding: 18px 22px;
-      border-left: 5px solid var(--blue);
-      background: #f1f7fa;
-      color: #25485c;
-      font-size: 1.05rem;
+      margin: 26px 0 0;
+      padding: 19px 22px;
+      border-left: 4px solid var(--blue);
+      background: var(--light-blue);
+      color: #29485a;
       font-style: italic;
     }
 
     .quote cite {
       display: block;
-      margin-top: 8px;
+      margin-top: 6px;
       font-style: normal;
-      font-weight: bold;
+      font-weight: 700;
     }
 
-    .story {
+    .two-column {
       display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 28px;
-      align-items: center;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
     }
 
-    .story img {
-      width: 220px;
-      height: 290px;
-      object-fit: cover;
-      object-position: center;
-      border-radius: 8px;
-    }
+    .education-title { margin-bottom: 5px; font-size: 1.15rem; }
 
-    .work-photo {
-      display: block;
-      width: 100%;
-      max-width: 420px;
-      height: auto;
-      margin: 22px auto;
-      border-radius: 8px;
-    }
+    .muted { color: var(--muted); }
 
-    .tags {
+    .coursework {
       display: flex;
       flex-wrap: wrap;
       gap: 9px;
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
     }
 
-    .tags span {
+    .coursework li, .tag {
       padding: 7px 11px;
+      border-radius: 999px;
       background: var(--light-blue);
-      color: #174966;
-      border-radius: 18px;
-      font-size: .93rem;
+      color: #25516a;
+      font-size: 0.9rem;
+      font-weight: 700;
     }
 
-    .adventure-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+    .experience + .experience {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
     }
 
-    .adventure-card {
-      overflow: hidden;
-      border: 1px solid #dce5e9;
-      border-radius: 8px;
-      background: #f8fafb;
+    .role-meta { margin-bottom: 10px; color: var(--muted); font-style: italic; }
+
+    ul { margin: 10px 0 0; padding-left: 20px; }
+
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+
+    .highlight {
+      padding: 20px;
+      border: 1px solid #d8e8ef;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #f4fbfd, #fff);
     }
 
-    .adventure-card img {
-      display: block;
-      width: 100%;
-      height: 230px;
-      object-fit: contain;
-      background: #edf2f4;
-    }
+    .highlight p:last-child { margin-bottom: 0; }
 
-    .adventure-card div {
-      padding: 14px;
-    }
-
-    .adventure-card h3 {
+    .honors {
+      columns: 2;
       margin: 0;
     }
 
     footer {
-      padding: 0 20px 34px;
+      padding: 26px 0 36px;
       color: var(--muted);
+      font-size: 0.92rem;
       text-align: center;
     }
 
     @media (max-width: 700px) {
-      header {
-        padding: 48px 24px;
-      }
-
-      main {
-        margin: 0;
-        padding: 22px;
-        border-radius: 0;
-      }
-
-      .hero,
-      .story,
-      .adventure-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .headshot {
-        width: 145px;
-        height: 145px;
-      }
-
-      .story img {
-        width: 220px;
-      }
-
-      .adventure-card img {
-        height: auto;
-        max-height: 370px;
-      }
+      .container { width: min(100% - 30px, 1000px); }
+      header { padding: 35px 0 30px; }
+      .hero { grid-template-columns: 1fr; gap: 19px; text-align: center; }
+      .profile-photo { width: 145px; height: 145px; margin: 0 auto; }
+      .contact-links { justify-content: center; }
+      .two-column { grid-template-columns: 1fr; gap: 20px; }
+      .honors { columns: 1; }
+      nav .container { gap: 16px; }
     }
   </style>
 </head>
-
 <body>
   <header>
     <div class="container hero">
+      <img class="profile-photo" src="Samuel Mathews.jpg" alt="Samuel Mathews">
       <div>
         <h1>Samuel Mathews</h1>
-        <p class="subtitle">Accounting Student | CPA Track</p>
-
-        <p class="intro">
-          I am an Accounting student at Cedarville University building a
-          foundation in financial analysis, accurate business operations, and
-          professional communication.
-        </p>
-
-        <div class="buttons">
-          <a href="mailto:samuelalanmathews@gmail.com">Email Me</a>
+        <p class="subtitle">Accounting Student · CPA Track · Cedarville University</p>
+        <div class="contact-links" aria-label="Contact Samuel">
+          <a href="mailto:samuelalanmathews@gmail.com">Email</a>
           <a href="sms:+15132085402">Text Me</a>
-          <a class="secondary"
-             href="https://www.linkedin.com/in/samuel-alan-mathews/"
-             target="_blank">View LinkedIn</a>
+          <a href="https://www.linkedin.com/in/samuel-alan-mathews/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
       </div>
-
-      <img class="headshot" src="Samuel%20Mathews.jpg" alt="Samuel Mathews">
     </div>
   </header>
 
-  <main>
-    <section>
+  <nav aria-label="Page sections">
+    <div class="container">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#leadership">Leadership</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section id="about" class="card">
       <h2>About Me</h2>
-
-      <p>
-        I am pursuing a Bachelor of Science in Accounting and plan to work
-        toward CPA licensure. I am interested in financial analysis, accurate
-        business operations, and using strong organizational skills to support
-        effective decision-making.
-      </p>
-
-      <p>
-        I spent much of my childhood living in Brazil, where my parents worked
-        with a nonprofit organization. Living in a cross-cultural environment
-        broadened my perspective, strengthened my adaptability, and taught me
-        the value of clear communication across different backgrounds. During
-        that time, I served as an English-Portuguese translator, developing
-        professionalism, discretion, and confidence in high-pressure situations.
-      </p>
-
+      <p class="lead">I am an accounting student pursuing the CPA track at Cedarville University. I bring a practical work ethic, attention to detail, and a global perspective to every team I join.</p>
+      <p>Much of my childhood was spent in Brazil while my parents served with a nonprofit organization. As a young person, I supported that work as an English–Portuguese translator. Those experiences strengthened my communication skills, cultural awareness, and ability to connect with people from different backgrounds.</p>
       <blockquote class="quote">
-        “Far and away the best prize that life offers is the chance to work hard
-        at work worth doing.”
+        “Far and away the best prize that life offers is the chance to work hard at work worth doing.”
         <cite>— Theodore Roosevelt</cite>
       </blockquote>
     </section>
 
-    <section>
-      <div class="story">
-        <img src="IMG_7317.jpg" alt="Samuel Mathews traveling in Brazil">
-
+    <section id="education" class="card">
+      <h2>Education</h2>
+      <div class="two-column">
         <div>
-          <h2>Global Perspective</h2>
-
-          <p>
-            My experience living in Brazil and translating between English and
-            Portuguese has shaped how I approach communication, teamwork, and
-            problem-solving. It has taught me to listen carefully, adapt quickly,
-            and work thoughtfully with people from different backgrounds.
-          </p>
-
-          <p>
-            I bring that global perspective to my academic work and professional
-            experience in logistics, inventory management, customer service, and
-            team leadership.
-          </p>
+          <h3 class="education-title">Cedarville University</h3>
+          <p class="muted">B.S. in Accounting · CPA Track<br>Expected graduation: December 2027</p>
+          <p><strong>Minors:</strong> Bible and Business Management</p>
+        </div>
+        <div>
+          <h3>Relevant Coursework</h3>
+          <ul class="coursework">
+            <li>Principles of Accounting I &amp; II</li>
+            <li>Microeconomics</li>
+            <li>Statistics for Business</li>
+            <li>Software Tools for Business</li>
+            <li>Business Law</li>
+            <li>Creative Problem Solving</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section>
-      <h2>Education</h2>
-      <h3>Cedarville University</h3>
-      <p class="date">B.S. Accounting | Expected December 2027</p>
-      <p>
-        Minor in Biology, with additional academic study in Business
-        Administration and Bible.
-      </p>
-    </section>
-
-    <section>
-      <h2>Relevant Coursework</h2>
-      <p>
-        Principles of Accounting I & II, Microeconomics, Statistics for Business,
-        Software Tools for Business, Creative Problem Solving, Business
-        Experience, and Business Law.
-      </p>
-    </section>
-
-    <section>
+    <section id="experience" class="card">
       <h2>Experience</h2>
 
-      <h3>Delivery Specialist — Jump Around Rentals</h3>
-      <p class="date">May 2025 – August 2026 | Fredericksburg, VA</p>
-      <ul>
-        <li>Delivered and installed event equipment for parties and events of up to 3,000 guests.</li>
-        <li>Operated box trucks and trailers safely while managing time-sensitive deliveries.</li>
-        <li>Worked directly with clients to create reliable, positive event experiences.</li>
-      </ul>
+      <article class="experience">
+        <h3>Fitness Floor Staff — Cedarville University</h3>
+        <p class="role-meta">February 2026 – Present · Cedarville, Ohio</p>
+        <ul>
+          <li>Welcome members, assist with check-ins, and answer questions about fitness facilities and services.</li>
+          <li>Maintain a clean, safe, and organized workout environment through equipment sanitation and safety checks.</li>
+          <li>Support daily front-desk and gym operations while resolving member concerns professionally.</li>
+        </ul>
+      </article>
 
-      <h3>Shipping and Receiving Supervisor — K.E. Warehouses</h3>
-      <p class="date">May 2024 – January 2025 | Cincinnati, OH</p>
-      <ul>
-        <li>Supervised the accurate handling of more than 1,000 items daily.</li>
-        <li>Managed inventory records and warehouse organization.</li>
-        <li>Trained employees in safety procedures and efficient operations.</li>
-      </ul>
+      <article class="experience">
+        <h3>Sanitation &amp; Kitchen Support Associate — Cedarville University</h3>
+        <p class="role-meta">August 2023 – Present · Cedarville, Ohio</p>
+        <ul>
+          <li>Maintain a clean, organized, sanitary kitchen environment in accordance with health and safety standards.</li>
+          <li>Balance a consistent 15–20-hour weekly work commitment alongside full-time academics.</li>
+        </ul>
+      </article>
 
-      <h3>Electronics Sales Associate — Walmart</h3>
-      <p class="date">May 2023 – August 2024 | Cincinnati, OH</p>
-      <ul>
-        <li>Assisted more than 50 customers daily in selecting electronics and related products.</li>
-        <li>Maintained organized, accurate merchandise displays and product availability.</li>
-      </ul>
+      <article class="experience">
+        <h3>Delivery Specialist — Jump Around Bounce House Rentals</h3>
+        <p class="role-meta">May 2025 – August 2026 · Fredericksburg, Virginia</p>
+        <ul>
+          <li>Delivered and installed event equipment for parties and events serving up to 3,000 guests.</li>
+          <li>Operated box trucks and trailers safely while managing time-sensitive deliveries.</li>
+          <li>Worked directly with clients to create reliable, positive event experiences.</li>
+        </ul>
+      </article>
 
-      <h3>Translator — Converge</h3>
-      <p class="date">February 2016 – April 2023 | São Paulo, Brazil</p>
-      <ul>
-        <li>Provided accurate oral and written translation between English and Portuguese.</li>
-        <li>Supported individuals and organizations through clear cross-cultural communication.</li>
-        <li>Maintained confidentiality and professionalism while handling sensitive information.</li>
-      </ul>
+      <article class="experience">
+        <h3>Shipping &amp; Receiving Supervisor — K.E. Warehouses</h3>
+        <p class="role-meta">May 2024 – January 2025 · Cincinnati, Ohio</p>
+        <ul>
+          <li>Supervised accurate handling of more than 1,000 items daily.</li>
+          <li>Managed inventory records, warehouse organization, and employee safety procedures.</li>
+        </ul>
+      </article>
+
+      <article class="experience">
+        <h3>Electronics Sales Associate — Walmart</h3>
+        <p class="role-meta">May 2023 – August 2024 · Cincinnati, Ohio</p>
+        <ul>
+          <li>Assisted more than 50 customers daily in selecting electronics and related products.</li>
+          <li>Maintained accurate, organized product displays and availability.</li>
+        </ul>
+      </article>
+
+      <article class="experience">
+        <h3>Translator — Converge</h3>
+        <p class="role-meta">February 2016 – April 2023 · São Paulo, Brazil</p>
+        <ul>
+          <li>Provided oral and written translation between English and Portuguese.</li>
+          <li>Supported clear cross-cultural communication while treating sensitive information professionally.</li>
+        </ul>
+      </article>
     </section>
 
-    <section>
+    <section id="skills" class="card">
       <h2>Skills</h2>
-      <div class="tags">
-        <span>Microsoft Excel</span>
-        <span>Data Organization</span>
-        <span>Inventory & Record Accuracy</span>
-        <span>Operational Analysis</span>
-        <span>Process Improvement</span>
-        <span>Professional Communication</span>
-        <span>Customer Service</span>
-        <span>Portuguese — Professional Proficiency</span>
+      <div class="skills" aria-label="Skills list">
+        <span class="tag">Microsoft Excel</span>
+        <span class="tag">Data Organization</span>
+        <span class="tag">Inventory &amp; Record Accuracy</span>
+        <span class="tag">Operational Analysis</span>
+        <span class="tag">Process Improvement</span>
+        <span class="tag">Customer Service</span>
+        <span class="tag">English–Portuguese Translation</span>
       </div>
     </section>
 
-    <section>
-      <h2>Honors & Recognition</h2>
-      <ul>
-        <li>Dean's Honors List, Cedarville University</li>
-        <li>Kuriger Accounting Scholarship</li>
-        <li>President's Scholar Award</li>
-        <li>Dr. Deforia Lane Kingdom Diversity Scholarship</li>
-        <li>President's Ministry Impact Scholarship</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Leadership & Involvement</h2>
-
-      <h3>Accounting Society — Cedarville University</h3>
-      <p class="date">General Member | August 2025 – Present</p>
-      <p>
-        Participate in a student organization focused on professional development
-        and career exploration in accounting and business.
-      </p>
-
-      <h3>Community & Ministry Service</h3>
-      <p>
-        Served with the Southern Cone Initiative and The Timothy Initiative,
-        supporting cross-cultural community work, leadership development, and
-        service projects.
-      </p>
-    </section>
-
-    <section>
-      <h2>Work & Academics</h2>
-
-      <p>
-        Alongside my Accounting coursework at Cedarville University, I work
-        approximately 15–20 hours per week in part-time campus roles. Balancing
-        employment with a full academic schedule has strengthened my time
-        management, dependability, organization, and ability to prioritize
-        responsibilities effectively.
-      </p>
-
-      <img class="work-photo"
-           src="IMG_0336.jpg"
-           alt="Samuel Mathews working at Cedarville University fitness center">
-
-      <h3>Fitness Floor Staff — Cedarville University</h3>
-      <p class="date">February 2026 – Present | Part-time</p>
-      <ul>
-        <li>Provide customer service by greeting members, assisting with check-ins, and answering questions about fitness facilities and services.</li>
-        <li>Maintain a clean, safe, and organized workout environment by sanitizing equipment and supporting safety standards.</li>
-        <li>Support daily gym operations by assisting members with equipment use, handling front-desk responsibilities, and resolving concerns professionally.</li>
-      </ul>
-
-      <h3>Sanitation & Kitchen Support Associate — Cedarville University</h3>
-      <p class="date">August 2023 – Present | Part-time</p>
-      <ul>
-        <li>Maintain a clean, organized, and sanitary kitchen environment in accordance with health and safety standards.</li>
-        <li>Support reliable dining operations through consistent attention to detail, cleanliness, and teamwork.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Beyond the Resume</h2>
-
-      <p>
-        I enjoy challenging myself outdoors and exploring new places. These
-        experiences have strengthened my resilience, curiosity, and appreciation
-        for preparation, teamwork, and lifelong learning.
-      </p>
-
-      <div class="adventure-grid">
-        <article class="adventure-card">
-          <img src="FullSizeRender.jpg" alt="Samuel Mathews hiking in the Grand Canyon">
-          <div>
-            <h3>Hiking the Grand Canyon</h3>
-          </div>
-        </article>
-
-        <article class="adventure-card">
-          <img src="IMG_3885.jpg" alt="Andes Mountains and alpine lake">
-          <div>
-            <h3>Trekking in the Andes Mountains</h3>
-          </div>
-        </article>
-
-        <article class="adventure-card">
-          <img src="115d4ac2-9233-4cda-b653-e72f9f976b12.JPG" alt="Samuel Mathews canoeing on a Virginia river">
-          <div>
-            <h3>Canoeing Virginia Rivers</h3>
-          </div>
-        </article>
+    <section id="leadership" class="card">
+      <h2>Leadership &amp; Recognition</h2>
+      <div class="two-column">
+        <div class="highlight">
+          <h3>Campus &amp; Community Involvement</h3>
+          <p>Accounting Society member focused on professional development and career exploration in accounting and business.</p>
+          <p>Served with the Southern Cone Initiative and The Timothy Initiative, supporting cross-cultural community work, leadership development, and service projects.</p>
+        </div>
+        <div>
+          <h3>Honors &amp; Scholarships</h3>
+          <ul class="honors">
+            <li>Dean’s Honors List</li>
+            <li>Kuriger Accounting Scholarship</li>
+            <li>President’s Scholar</li>
+            <li>Deforia Lane Scholarship</li>
+            <li>President’s Ministry Impact Scholarship</li>
+          </ul>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
-    © 2026 Samuel Mathews
+    © 2026 Samuel Mathews · <a href="mailto:samuelalanmathews@gmail.com">samuelalanmathews@gmail.com</a> · <a href="sms:+15132085402">(513) 208-5402</a>
   </footer>
 </body>
 </html>

@@ -42,20 +42,13 @@
       gap: 40px;
     }
 
-    .headshot-frame {
+    .headshot {
       width: 180px;
       height: 180px;
+      object-fit: cover;
+      object-position: center;
       border-radius: 50%;
       border: 5px solid #d5e5ed;
-      overflow: hidden;
-    }
-
-    .headshot {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: 55% 40%;
-      transform: scale(1.35);
     }
 
     h1 {
@@ -244,7 +237,7 @@
         grid-template-columns: 1fr;
       }
 
-      .headshot-frame {
+      .headshot {
         width: 145px;
         height: 145px;
       }
@@ -283,9 +276,7 @@
         </div>
       </div>
 
-      <div class="headshot-frame">
-        <img class="headshot" src="Samuel%20Mathews.jpg" alt="Samuel Mathews">
-      </div>
+      <img class="headshot" src="Samuel%20Mathews.jpg" alt="Samuel Mathews">
     </div>
   </header>
 
